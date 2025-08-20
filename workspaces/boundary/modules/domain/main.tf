@@ -10,6 +10,16 @@ resource "digitalocean_domain" "domain" {
 # dns records
 #####
 
+// github verify
+
+resource "digitalocean_record" "github_verify" {
+  domain = digitalocean_domain.domain.id
+  name   = "_gh-voi-community-o"
+  ttl    = 1800
+  type   = "TXT"
+  value  = "6e8a79c7a3"
+}
+
 // github pages
 
 resource "digitalocean_record" "github_pages_1" {
